@@ -1,6 +1,5 @@
 import {Injectable} from "@angular/core";
 import {AsyncValidator, FormControl} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
 import {catchError, map} from "rxjs/operators";
 import {of} from "rxjs";
 import {AuthService} from "../auth.service";
@@ -9,7 +8,7 @@ import {AuthService} from "../auth.service";
   providedIn: "root"
 })
 export class UniqueUsername implements AsyncValidator{
-  constructor(private http: HttpClient, private authService:AuthService) { }
+  constructor(private authService:AuthService) { }
 
   validate = (control: FormControl) => {
     const { value } = control;
